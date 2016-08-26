@@ -1,5 +1,6 @@
 {
     "author": "Glaucia Lemos",
+    "license": "MIT",
     "version": "1.0.0",
     "description": "CRUD RestFul com Node.Js e Express.Js",
     "name": "node-api",
@@ -11,6 +12,6 @@
     },
     "repository": {
     "type": "git",
-    "url": "git@dadhx01:oidigital/cadastro-backend.git"
+    "url": "git://github.com/glaucia86/crud--node-express-restfull.git"
   }
 }
