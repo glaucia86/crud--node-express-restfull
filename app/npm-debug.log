@@ -4,30 +4,22 @@
 3 info using node@v4.5.0
 4 verbose readDependencies loading dependencies from /home/devops/Documentos/Labs/CRUD RestFul - Node.Js MongoDb/app/package.json
 5 error install Couldn't read dependencies
-6 verbose stack Error: Failed to parse json
-6 verbose stack Unexpected token '/' at 1:1
-6 verbose stack /*package.json - Arquivo responsável pelas
-6 verbose stack ^
-6 verbose stack     at parseError (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:390:11)
-6 verbose stack     at parseJson (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:79:23)
-6 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:48:5
-6 verbose stack     at /usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16
-6 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:380:3)
+6 verbose stack Error: Invalid version: "1.0"
+6 verbose stack     at Object.module.exports.fixVersionField (/usr/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:191:13)
+6 verbose stack     at /usr/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:32:38
+6 verbose stack     at Array.forEach (native)
+6 verbose stack     at normalize (/usr/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:31:15)
+6 verbose stack     at final (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:349:5)
+6 verbose stack     at then (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:124:5)
+6 verbose stack     at ReadFileContext.<anonymous> (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:295:20)
+6 verbose stack     at ReadFileContext.callback (/usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16)
+6 verbose stack     at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:303:13)
 7 verbose cwd /home/devops/Documentos/Labs/CRUD RestFul - Node.Js MongoDb/app
 8 error Linux 3.10.0-327.28.3.el7.x86_64
 9 error argv "/usr/bin/node" "/usr/bin/npm" "install"
 10 error node v4.5.0
 11 error npm  v2.15.9
-12 error file /home/devops/Documentos/Labs/CRUD RestFul - Node.Js MongoDb/app/package.json
-13 error code EJSONPARSE
-14 error Failed to parse json
-14 error Unexpected token '/' at 1:1
-14 error /*package.json - Arquivo responsável pelas
-14 error ^
-15 error File: /home/devops/Documentos/Labs/CRUD RestFul - Node.Js MongoDb/app/package.json
-16 error Failed to parse package.json data.
-16 error package.json must be actual JSON, not just JavaScript.
-16 error
-16 error This is not a bug in npm.
-16 error Tell the package author to fix their package.json file. JSON.parse
-17 verbose exit [ 1, true ]
+12 error Invalid version: "1.0"
+13 error If you need help, you may report this error at:
+13 error     <https://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]
