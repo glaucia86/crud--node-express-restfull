@@ -12,6 +12,7 @@
 var express         = require('express');
 var bodyParser      = require('body-parser');
 var mongoose        = require('mongoose');
+var Bear            = require('./app/models/bear.js'); //adicionando a classe do modelo do arquivo - 'bear.js'
 var app             = express();    //definção da nossa aplicação através do express
 
 mongoose.connect('mongodb://admin:admin123456@jello.modulusmongo.net:27017/awEte9ne')
@@ -25,19 +26,24 @@ app.use(bodyParser.json());
 /** Definição da porta onde será executada a nossa aplicação */
 var port = process.env.PORT || 8080;
 
-//Rotas para a API 
+//Rotas para a nossa API: 
 
 /* Aqui o 'router' irá pegar as instâncias das Rotas do Express */
 var router  = express.Router();
 
-/*  Aqui iremos testar para saber se a rota está funcionando corretamente
-    O acesso será através do link (GET): http://localhost:8080/api
- */
+/* Middleware para usar em todos os requests enviados para a nossa API- Mensagem Padrão */
+router.use(function(req, res, next) {
+    console.log('Algo está acontecendo aqui......');
+    next(); //aqui é para sinalizar de que prosseguiremos para a próxima rota. E que não irá parar por aqui!!!
+});
+
+/* Rota de Teste para sabermos se tudo está realmente funcionando (acessar através: GET: http://localhost:8080/api) */
 router.get('/', function(req, res) {
     res.json({ message: "WOW!!! Seja Bem-Vindo a API!" });
 });
 
 /* TODO: Mais rotas a definir aqui */
+
 
 //Registrando as Rotas:
 
