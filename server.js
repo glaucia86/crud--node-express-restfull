@@ -15,7 +15,8 @@ var mongoose        = require('mongoose');
 var Bear            = require('./app/models/bear'); //adicionando a classe do modelo do arquivo - 'bear.js'
 var app             = express();    //definção da nossa aplicação através do express
 
-//mongoose.connect('mongodb://root:root@waffle.modulusmongo.net:27017/urevEw6a');
+//mongoose.connect('mongodb://root:root@waffle.modulusmongo.net:27017/urevEw6a'); //testar em casa se vai funcionar.....
+mongoose.connect('mongodb://localhost/node-api');
 
 /** Configuração da variável 'app' para usar o 'bodyParser()'.
  * Ao fazermos isso nos permitirá retornar os dados a partir de um POST
