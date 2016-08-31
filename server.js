@@ -28,6 +28,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 
 //Rotas para a nossa API: 
+//==============================================================
 
 /* Aqui o 'router' irá pegar as instâncias das Rotas do Express */
 var router  = express.Router();
@@ -43,13 +44,10 @@ router.get('/', function(req, res) {
     res.json({ message: "WOW!!! Seja Bem-Vindo a API!" });
 });
 
-/* TODO: Mais rotas a definir aqui */
-
-/* 1) Método: Criar Bear (acessar em: POST http://localhost:8080/api/bears */
-
 // Rotas que irão terminar em '/bears':
 router.route('/bears')
 
+    /* 1) Método: Criar Bear (acessar em: POST http://localhost:8080/api/bears */
     .post(function(req, res) {
         var bear = new Bear();
         bear.name = req.body.name; //aqui seta o nome dos bears (que virá do request)
@@ -61,7 +59,19 @@ router.route('/bears')
             
             res.json({ message: 'Bear criado!' });
         });
-    });
+    })
+
+    /* 2) Método: Selecionar Todos (acessar em: GET http://locahost:8080/api/bears) */
+    .get(function(req, res) {
+
+        //Função para Selecionar Todos os 'bears' e verificar se há algum erro:
+        Bear.find(function(err, bears) {
+			if (err)
+				res.send(err);
+
+			res.json(bears);
+		});
+	});
 
 //Registrando as Rotas:
 
