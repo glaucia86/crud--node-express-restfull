@@ -12,10 +12,10 @@
 var express         = require('express');
 var bodyParser      = require('body-parser');
 var mongoose        = require('mongoose');
-var Bear            = require('./app/models/bear.js'); //adicionando a classe do modelo do arquivo - 'bear.js'
+var Bear            = require('./app/models/bear'); //adicionando a classe do modelo do arquivo - 'bear.js'
 var app             = express();    //definção da nossa aplicação através do express
 
-mongoose.connect('mongodb://admin:admin123456@jello.modulusmongo.net:27017/awEte9ne')
+//mongoose.connect('mongodb://root:root@waffle.modulusmongo.net:27017/urevEw6a');
 
 /** Configuração da variável 'app' para usar o 'bodyParser()'.
  * Ao fazermos isso nos permitirá retornar os dados a partir de um POST
@@ -44,6 +44,23 @@ router.get('/', function(req, res) {
 
 /* TODO: Mais rotas a definir aqui */
 
+/* 1) Método: Criar Bear (acessar em: POST http://localhost:8080/api/bears */
+
+// Rotas que irão terminar em '/bears':
+router.route('/bears')
+
+    .post(function(req, res) {
+        var bear = new Bear();
+        bear.name = req.body.name; //aqui seta o nome dos bears (que virá do request)
+
+        //Função para Salvar o bear e verificar se há algum erro:
+        bear.save(function(error) {
+            if(error)
+                res.send(error);
+            
+            res.json({ message: 'Bear criado!' });
+        });
+    });
 
 //Registrando as Rotas:
 
