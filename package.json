@@ -2,9 +2,12 @@
     "author": "Glaucia Lemos",
     "license": "MIT",
     "version": "1.0.0",
-    "description": "CRUD RestFul com Node.Js e Express.Js",
+    "description": "CRUD RestFul com Node.Js & Express.Js com MongoDb",
     "name": "node-api",
     "main": "server.js",
+    "scripts": {
+        "test": "echo\"Error: sem teste especificado\" && exit 1"
+    },
     "dependencies": {
         "express": "~4.0.0",
         "mongoose":"*",
