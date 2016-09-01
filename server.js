@@ -44,7 +44,7 @@ router.get('/', function(req, res) {
     res.json({ message: "WOW!!! Seja Bem-Vindo a API!" });
 });
 
-// Rotas que irão terminar em '/bears':
+// Rotas que irão terminar em '/bears' - (servem tanto para: GET All & POST)
 router.route('/bears')
 
     /* 1) Método: Criar Bear (acessar em: POST http://localhost:8080/api/bears */
@@ -73,7 +73,18 @@ router.route('/bears')
 		});
 	});
 
-//Registrando as Rotas:
+// Rotas que irão terminar em '/bears/:bear_id' - (servem tanto para GET by Id, PUT, & DELETE)
+router.route('/bears/:bear_id')
+
+    /* 3) Método: Selecionar Por Id (acessar em: GET http://localhost:8080/api/bears/:bear_id) */
+        .get(function(req, res) {
+            Bear.findById(req.params.bear_id, function(error, bear) {
+                if(error)
+                    res.send(error);
+                
+                res.json(bear);
+            });
+        });
 
 /* Todas as nossas rotas serão prefixadas com '/api' */
 app.use('/api', router);
