@@ -107,7 +107,21 @@ router.route('/bears/:bear_id')
                     res.json({ message: 'Bear Atualizado!' });
                 });
              });
-        });            
+        })
+
+    /* 5) Método: Excluir (acessar em: http://localhost:8080/api/bears/:bear_id) */
+        .delete(function(req, res) {
+
+            //Função para excluir os dados e também verificar se há algum erro no momento da exclusão:
+            Bear.remove({
+                _id: req.params.bear_id
+            }, function(error) {
+                    if(error)
+                        res.send(error);
+                    
+                    res.json({ message: 'Bear Excluído com Sucesso!' });
+            });
+        });
 
 /* Todas as nossas rotas serão prefixadas com '/api' */
 app.use('/api', router);
