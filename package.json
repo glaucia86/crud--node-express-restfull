@@ -6,7 +6,7 @@
   "name": "node-api",
   "main": "server.js",
   "scripts": {
-    "test": "echo\"Error: sem teste especificado\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "dependencies": {
     "body-parser": "~1.0.1",
