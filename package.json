@@ -1,19 +1,21 @@
 {
-    "author": "Glaucia Lemos",
-    "license": "MIT",
-    "version": "1.0.0",
-    "description": "CRUD RestFul com Node.Js & Express.Js com MongoDb",
-    "name": "node-api",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo\"Error: sem teste especificado\" && exit 1"
-    },
-    "dependencies": {
-        "express": "~4.0.0",
-        "mongoose":"*",
-        "body-parser": "~1.0.1"
-    },
-    "repository": {
+  "author": "Glaucia Lemos",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "CRUD RestFul com Node.Js & Express.Js com MongoDb",
+  "name": "node-api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo\"Error: sem teste especificado\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "chai": "^3.5.0",
+    "express": "~4.0.0",
+    "mocha": "^3.0.2",
+    "mongoose": "*"
+  },
+  "repository": {
     "type": "git",
     "url": "git://github.com/glaucia86/crud--node-express-restfull.git"
   }
