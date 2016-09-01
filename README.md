@@ -43,8 +43,8 @@ Para começar, você deve simplesmente clonar o repositório do projeto na sua m
 
 Antes de instalar as dependências no projeto, você precisa já ter instalado na sua máquina:
 
-* Node.Js: Caso não tenha, basta realizar o download [Aqui](https://nodejs.org/en/)
-* MongoDb: Caso também não tenha, basta realizar o download [Aqui](https://www.mongodb.com/download-center#community)
+* **Node.Js**: Caso não tenha, basta realizar o download [Aqui](https://nodejs.org/en/)
+* **MongoDb**: Caso também não tenha, basta realizar o download [Aqui](https://www.mongodb.com/download-center#community)
 
 p.s.: o MongoDb caso você decida conectar a sua base de dados de maneira local. Caso não, basta usar 
 a base de dados do MongoDb em Cloud:
@@ -90,10 +90,10 @@ Caso o MongoDb esteja devidamente instalado em sua máquina, ele iniciará o ser
 Agora, abre a página da aplicação em `http://localhost:8080/api`. E pronto a aplicação será executada de maneira local na sua máquina.        
 
 
-p.s.: no projeto, declarei 2 maneiras de realizar a conexão de dados com o MongoDb através do Mongoose:
+p.s.: no projeto, disponibilizei 2 maneiras de realizar a conexão de dados com o MongoDb através do Mongoose:
 
-* De maneira local: utilizando o MongoDb;
-* De maneira em cloud: utilizando o Modulus;
+* **De maneira local**: utilizando o MongoDb;
+* **De maneira em cloud**: utilizando o Modulus;
 
-Fique à vontade em usar ou até mesmo testar ambas as conexões!! :)  
+Fiquem à vontade em usar ou até mesmo testar ambas as conexões!! :)  
                         
