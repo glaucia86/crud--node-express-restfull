@@ -78,13 +78,36 @@ router.route('/bears/:bear_id')
 
     /* 3) Método: Selecionar Por Id (acessar em: GET http://localhost:8080/api/bears/:bear_id) */
         .get(function(req, res) {
+
+            //Função para Selecionar Por Id e verificar se há algum erro:
             Bear.findById(req.params.bear_id, function(error, bear) {
                 if(error)
                     res.send(error);
                 
                 res.json(bear);
             });
-        });
+        })
+
+    /* 4) Método: Atualizar (acessar em: PUT http://localhost:8080/api/bears/:bear_id) */
+        .put(function(req, res) {
+
+             //Primeiro: Para atualizarmos, precisamos primeiro achar o Bear. Para isso, vamos selecionar por id:
+             Bear.findById(req.params.bear_id, function(err, bear) {
+                 if (err)
+                    res.send(err);
+
+                //Segundo: Diferente do Selecionar Por Id... a resposta será a atribuição do que encontramos na classe modelo:
+                bear.name = req.body.name; //aqui irá atualizar o nome
+
+                //Terceiro: Agora que já atualizamos o nome, precisamos salvar essa alteração....
+                bear.save(function(error) {
+                    if(error) 
+                        res.send(error);
+
+                    res.json({ message: 'Bear Atualizado!' });
+                });
+             });
+        });            
 
 /* Todas as nossas rotas serão prefixadas com '/api' */
 app.use('/api', router);
